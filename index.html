@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuldeep Dave | Digital Security Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #181A1B; /* Graphite Gray */
+            color: #A9A3B6; /* Nebula Gray */
+            overflow-x: hidden;
+        }
+
+        /* Animated Aurora Background */
+        .aurora-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at top left, rgba(20, 184, 166, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom right, rgba(20, 184, 166, 0.1), transparent 40%);
+            animation: aurora 20s infinite alternate;
+        }
+        @keyframes aurora {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #181A1B;
+            z-index: 101;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.7s ease-out, visibility 0.7s ease-out;
+            transition-delay: 2.5s;
+        }
+        #splash-logo {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            animation: glow 3s ease-in-out forwards;
+            text-shadow: 0 0 10px rgba(20, 184, 166, 0.5), 0 0 20px rgba(20, 184, 166, 0.5), 0 0 40px rgba(20, 184, 166, 0.5);
+        }
+        @keyframes glow {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(20, 184, 166, 0.8);
+            box-shadow: 0 10px 30px rgba(20, 184, 166, 0.1);
+        }
+
+        .nav-link {
+            position: relative;
+            color: #A9A3B6;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #FFFFFF;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #14B8A6; /* Mint Green */
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .contact-button {
+            background-color: #14B8A6;
+            color: #111;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #0F766E;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+        
+        /* Modal Styles */
+        #ai-modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #ai-modal-content {
+            transition: transform 0.3s ease;
+        }
+        .loader {
+            border: 4px solid #374151;
+            border-radius: 50%;
+            border-top: 4px solid #14B8A6;
+            width: 40px;
+            height: 40px;
+            animation: spin 1.5s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="overflow-y-hidden">
+
+    <div class="aurora-background"></div>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div id="splash-logo">KD</div>
+    </div>
+
+    <!-- AI Analysis Modal -->
+    <div id="ai-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm p-4 opacity-0 invisible">
+        <div id="ai-modal-content" class="card rounded-2xl p-8 md:p-12 w-full max-w-2xl transform scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-white">✨ AI Project Analysis</h2>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+            </div>
+            <div id="modal-body" class="min-h-[200px] flex items-center justify-center">
+                <div id="modal-loader" class="loader"></div>
+                <div id="modal-text" class="text-gray-300 whitespace-pre-wrap max-h-[60vh] overflow-y-auto"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 md:px-12 py-8">
+        <header class="flex justify-between items-center" data-aos="fade-down">
+            <a href="#" class="text-2xl font-bold text-white">Kuldeep Dave</a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="contact-button font-semibold py-2 px-5 rounded-full">Contact</a>
+            </nav>
+            <!-- Mobile Navigation Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+            <nav class="flex flex-col items-center space-y-4">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="contact-button font-semibold py-2 px-5 rounded-full w-full text-center">Contact</a>
+            </nav>
+        </div>
+
+        <main class="mt-24 md:mt-32">
+            <!-- Hero Section -->
+            <section id="hero" class="text-center" data-aos="fade-up">
+                <img src="image_514307.jpg" alt="Kuldeep Dave" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/128x128/111111/ffffff?text=KD';">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    Digital Security Architect & Innovator
+                </h1>
+                <p class="mt-6 text-lg max-w-3xl mx-auto">
+                    I engineer resilient digital platforms where robust security and seamless user experience converge. Founder @Trinetra AI, Co-founder @Raksha AI.
+                </p>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="mt-32" data-aos="fade-up">
+                <div class="card rounded-2xl p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-white mb-6">About Me</h2>
+                    <div class="grid md:grid-cols-2 gap-8 text-gray-300">
+                        <div>
+                            <h3 class="font-semibold text-white mb-2">My Mission</h3>
+                            <p>
+                                As a professional at the nexus of software development and cybersecurity, my focus is on creating applications that are not just functional, but fundamentally secure. This dual-specialty allows me to architect and implement solutions where security is a core component, not an afterthought.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-2">My Approach</h3>
+                            <p>
+                                Through my ventures, Trinetra AI and Raksha AI, I am actively exploring the frontiers of technology to build intelligent systems that solve real-world problems. From developing robust web applications to conducting in-depth penetration tests, my mission is to engineer a safer, more resilient digital future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="mt-24" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white text-center mb-12">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2" data-project-title>PhoneSploit-Pro</h3>
+                            <p class="mb-4 text-sm text-gray-300" data-project-desc>An advanced penetration testing tool for Android, enabling remote exploitation and control over the Android Debug Bridge (ADB).</p>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between">
+                            <a href="https://github.com/bnl987" target="_blank" class="font-semibold text-teal-400 hover:text-teal-300 text-sm">View Project &rarr;</a>
+                            <button onclick="analyzeProject(this)" class="text-xs bg-teal-500/20 text-teal-300 py-1 px-3 rounded-full hover:bg-teal-500/40 transition">✨ AI Analyst</button>
+                        </div>
+                    </div>
+                    <div class="card rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2" data-project-title>Deepfake Detection System</h3>
+                            <p class="mb-4 text-sm text-gray-300" data-project-desc>A deep learning model designed to accurately identify and flag manipulated video content by analyzing visual artifacts with advanced neural networks.</p>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between">
+                            <a href="https://github.com/bnl987" target="_blank" class="font-semibold text-teal-400 hover:text-teal-300 text-sm">View Project &rarr;</a>
+                            <button onclick="analyzeProject(this)" class="text-xs bg-teal-500/20 text-teal-300 py-1 px-3 rounded-full hover:bg-teal-500/40 transition">✨ AI Analyst</button>
+                        </div>
+                    </div>
+                    <div class="card rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-white mb-2" data-project-title>Raksha AI</h3>
+                            <p class="mb-4 text-sm text-gray-300" data-project-desc>An AI-powered tool that provides real-time detection and analysis of phishing URLs to prevent cyber attacks.</p>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between">
+                            <a href="#" target="_blank" class="font-semibold text-teal-400 hover:text-teal-300 text-sm">View Project &rarr;</a>
+                            <button onclick="analyzeProject(this)" class="text-xs bg-teal-500/20 text-teal-300 py-1 px-3 rounded-full hover:bg-teal-500/40 transition">✨ AI Analyst</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="mt-24" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white text-center mb-12">Core Competencies</h2>
+                <div class="card rounded-2xl p-8 md:p-12">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div data-aos="fade-up" data-aos-delay="100"><h3 class="font-semibold text-white">Penetration Testing</h3></div>
+                        <div data-aos="fade-up" data-aos-delay="150"><h3 class="font-semibold text-white">Python</h3></div>
+                        <div data-aos="fade-up" data-aos-delay="200"><h3 class="font-semibold text-white">React & Node.js</h3></div>
+                        <div data-aos="fade-up" data-aos-delay="250"><h3 class="font-semibold text-white">Vulnerability Assessment</h3></div>
+                        <div data-aos="fade-up" data-aos-delay="300"><h3 class="font-semibold text-white">Ethical Hacking</h3></div>
+                        <div data-aos="fade-up" data-aos-delay="350"><h3 class="font-semibold text-white">JavaScript</h3></div>
+                        <div data-aos="fade-up" data-aos-delay="400"><h3 class="font-semibold text-white">Deep Learning</h3></div>
+                        <div data-aos="fade-up" data-aos-delay="450"><h3 class="font-semibold text-white">Linux & Git</h3></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="mt-24 text-center" data-aos="zoom-in">
+                <div class="card rounded-2xl p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-white mb-4">Initiate Contact</h2>
+                    <p class="max-w-xl mx-auto mb-8 text-gray-300">
+                        Open to new collaborations and challenging projects. Let's discuss how we can secure your digital assets together.
+                    </p>
+                    <a href="mailto:kuldeepdave561@gmail.com" class="contact-button font-bold py-3 px-8 rounded-full inline-block">
+                        Send Message
+                    </a>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="text-center py-12 mt-16">
+            <p class="text-sm text-gray-500">&copy; 2025 Kuldeep Dave. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // --- Splash Screen Logic ---
+        window.addEventListener('load', () => {
+            const splash = document.getElementById('splash-screen');
+            const body = document.body;
+            splash.style.opacity = '0';
+            splash.style.visibility = 'hidden';
+            body.classList.remove('overflow-y-hidden');
+        });
+
+        // Initialize Animate On Scroll library
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-in-out-quad',
+        });
+
+        // --- Mobile Menu Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for all navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu after clicking a link
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // --- Gemini API Integration for AI Project Analyst ---
+        const modal = document.getElementById('ai-modal');
+        const modalContent = document.getElementById('ai-modal-content');
+        const modalLoader = document.getElementById('modal-loader');
+        const modalText = document.getElementById('modal-text');
+
+        function openModal() {
+            modal.classList.remove('opacity-0', 'invisible');
+            modalContent.classList.remove('scale-95');
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0', 'invisible');
+            modalContent.classList.add('scale-95');
+        }
+
+        async function analyzeProject(button) {
+            const card = button.closest('.card');
+            const title = card.querySelector('[data-project-title]').innerText;
+            const description = card.querySelector('[data-project-desc]').innerText;
+
+            openModal();
+            modalText.classList.add('hidden');
+            modalLoader.classList.remove('hidden');
+
+            const prompt = `As a senior tech analyst, provide a professional analysis of the following project. The project is by Kuldeep Dave, a cybersecurity expert. Structure your analysis with these sections: "Potential Impact", "Technical Strengths", and "Security Considerations". Keep the tone professional and insightful.\n\nProject Title: ${title}\nProject Description: ${description}`;
+
+            try {
+                const analysis = await callGemini(prompt);
+                modalText.innerText = analysis;
+            } catch (error) {
+                console.error("Error analyzing project:", error);
+                modalText.innerText = "An error occurred during the analysis. Please try again later.";
+            } finally {
+                modalLoader.classList.add('hidden');
+                modalText.classList.remove('hidden');
+            }
+        }
+
+        async function callGemini(prompt) {
+            const apiKey = ""; // API key is handled by the environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+            const payload = { contents: [{ parts: [{ text: prompt }] }] };
+
+            const response = await fetchWithRetry(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+
+            const result = await response.json();
+            
+            if (result.candidates && result.candidates[0]?.content?.parts[0]?.text) {
+                return result.candidates[0].content.parts[0].text.trim();
+            } else {
+                throw new Error("Invalid response structure from API.");
+            }
+        }
+
+        async function fetchWithRetry(url, options, retries = 3, delay = 1000) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok || (response.status >= 400 && response.status < 500)) {
+                        return response;
+                    }
+                } catch (error) {
+                    if (i === retries - 1) throw error;
+                }
+                await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, i)));
+            }
+            throw new Error("API request failed after multiple retries.");
+        }
+    </script>
+</body>
+</html>
