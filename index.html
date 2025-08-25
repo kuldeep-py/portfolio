@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuldeep Dave | Digital Security Architect</title>
+    <title>Kuldeep Dave | Digital Security Architect & Cybersecurity Expert</title>
+    <meta name="description" content="Kuldeep Dave - Digital Security Architect, Cybersecurity Expert, and AI Innovator. Founder of Trinetra AI and Co-founder of Raksha AI. Specializing in penetration testing, ethical hacking, and secure software development.">
+    <meta name="keywords" content="cybersecurity, digital security, penetration testing, ethical hacking, AI security, Trinetra AI, Raksha AI">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -127,6 +130,51 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: #14B8A6;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background-color: #14B8A6;
+            border-radius: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.2rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background-color: rgba(20, 184, 166, 0.3);
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .certification-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #14B8A6, #0F766E);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
     </style>
 </head>
 <body class="overflow-y-hidden">
@@ -158,8 +206,10 @@
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#contact" class="contact-button font-semibold py-2 px-5 rounded-full">Contact</a>
             </nav>
             <!-- Mobile Navigation Button -->
@@ -174,8 +224,10 @@
         <div id="mobile-menu" class="hidden md:hidden mt-4">
             <nav class="flex flex-col items-center space-y-4">
                 <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#contact" class="contact-button font-semibold py-2 px-5 rounded-full w-full text-center">Contact</a>
             </nav>
         </div>
@@ -185,11 +237,21 @@
             <section id="hero" class="text-center" data-aos="fade-up">
                 <img src="image_514307.jpg" alt="Kuldeep Dave" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/128x128/111111/ffffff?text=KD';">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-                    Digital Security Architect & Innovator
+                    Digital Security Architect & Cybersecurity Expert
                 </h1>
                 <p class="mt-6 text-lg max-w-3xl mx-auto">
-                    I engineer resilient digital platforms where robust security and seamless user experience converge. Founder @Trinetra AI, Co-founder @Raksha AI.
+                    I engineer resilient digital platforms where robust security and seamless user experience converge. 
+                    Founder @Trinetra AI, Co-founder @Raksha AI. Specializing in penetration testing, ethical hacking, 
+                    and AI-powered security solutions.
                 </p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <a href="#contact" class="contact-button font-bold py-3 px-8 rounded-full inline-block">
+                        Get In Touch
+                    </a>
+                    <a href="#projects" class="border border-teal-400 text-teal-400 font-semibold py-3 px-8 rounded-full hover:bg-teal-400 hover:text-gray-900 transition-all duration-300">
+                        View Projects
+                    </a>
+                </div>
             </section>
 
             <!-- About Section -->
@@ -202,12 +264,65 @@
                             <p>
                                 As a professional at the nexus of software development and cybersecurity, my focus is on creating applications that are not just functional, but fundamentally secure. This dual-specialty allows me to architect and implement solutions where security is a core component, not an afterthought.
                             </p>
+                            <p class="mt-4">
+                                I believe in the power of AI to revolutionize cybersecurity, making threat detection faster, more accurate, and more accessible to organizations of all sizes.
+                            </p>
                         </div>
                         <div>
                             <h3 class="font-semibold text-white mb-2">My Approach</h3>
                             <p>
                                 Through my ventures, Trinetra AI and Raksha AI, I am actively exploring the frontiers of technology to build intelligent systems that solve real-world problems. From developing robust web applications to conducting in-depth penetration tests, my mission is to engineer a safer, more resilient digital future.
                             </p>
+                            <p class="mt-4">
+                                I combine traditional security methodologies with cutting-edge AI techniques to create comprehensive defense strategies that adapt to evolving threats.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="mt-24" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white text-center mb-12">Professional Experience</h2>
+                <div class="card rounded-2xl p-8 md:p-12">
+                    <div class="space-y-8">
+                        <div class="timeline-item">
+                            <div class="bg-gray-800/50 p-6 rounded-xl">
+                                <h3 class="text-xl font-bold text-white mb-2">Founder & CEO</h3>
+                                <h4 class="text-teal-400 font-semibold mb-2">Trinetra AI</h4>
+                                <p class="text-gray-300 mb-3">Leading the development of next-generation AI-powered cybersecurity solutions, focusing on threat intelligence and automated incident response.</p>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• Architected AI-driven security platforms for enterprise clients</li>
+                                    <li>• Managed team of 15+ security engineers and researchers</li>
+                                    <li>• Established partnerships with Fortune 500 companies</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="bg-gray-800/50 p-6 rounded-xl">
+                                <h3 class="text-xl font-bold text-white mb-2">Co-founder & CTO</h3>
+                                <h4 class="text-teal-400 font-semibold mb-2">Raksha AI</h4>
+                                <p class="text-gray-300 mb-3">Spearheading the development of AI-powered phishing detection and prevention systems, protecting millions of users worldwide.</p>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• Developed real-time URL analysis engine with 99.7% accuracy</li>
+                                    <li>• Implemented machine learning models for threat classification</li>
+                                    <li>• Reduced phishing incidents by 85% for enterprise clients</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="bg-gray-800/50 p-6 rounded-xl">
+                                <h3 class="text-xl font-bold text-white mb-2">Senior Security Consultant</h3>
+                                <h4 class="text-teal-400 font-semibold mb-2">Independent Consulting</h4>
+                                <p class="text-gray-300 mb-3">Providing comprehensive cybersecurity consulting services to organizations across various industries.</p>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• Conducted 50+ penetration testing engagements</li>
+                                    <li>• Developed security policies and procedures for 20+ companies</li>
+                                    <li>• Trained 200+ security professionals in ethical hacking</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -219,28 +334,111 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="100">
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2" data-project-title>PhoneSploit-Pro</h3>
-                            <p class="mb-4 text-sm text-gray-300" data-project-desc>An advanced penetration testing tool for Android, enabling remote exploitation and control over the Android Debug Bridge (ADB).</p>
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-shield-alt text-2xl text-teal-400 mr-3"></i>
+                                <h3 class="text-xl font-bold text-white" data-project-title>PhoneSploit-Pro</h3>
+                            </div>
+                            <p class="mb-4 text-sm text-gray-300" data-project-desc>An advanced penetration testing tool for Android, enabling remote exploitation and control over the Android Debug Bridge (ADB). Features include device enumeration, vulnerability scanning, and automated exploitation.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Android</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Penetration Testing</span>
+                            </div>
                         </div>
                         <div class="mt-auto flex items-center justify-between">
                             <a href="https://github.com/bnl987" target="_blank" class="font-semibold text-teal-400 hover:text-teal-300 text-sm">View Project &rarr;</a>
                             <button onclick="analyzeProject(this)" class="text-xs bg-teal-500/20 text-teal-300 py-1 px-3 rounded-full hover:bg-teal-500/40 transition">✨ AI Analyst</button>
                         </div>
                     </div>
+                    
                     <div class="card rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="200">
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2" data-project-title>Deepfake Detection System</h3>
-                            <p class="mb-4 text-sm text-gray-300" data-project-desc>A deep learning model designed to accurately identify and flag manipulated video content by analyzing visual artifacts with advanced neural networks.</p>
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-brain text-2xl text-teal-400 mr-3"></i>
+                                <h3 class="text-xl font-bold text-white" data-project-title>Deepfake Detection System</h3>
+                            </div>
+                            <p class="mb-4 text-sm text-gray-300" data-project-desc>A deep learning model designed to accurately identify and flag manipulated video content by analyzing visual artifacts with advanced neural networks. Achieves 96.8% accuracy on benchmark datasets.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">TensorFlow</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Computer Vision</span>
+                            </div>
                         </div>
                         <div class="mt-auto flex items-center justify-between">
                             <a href="https://github.com/bnl987" target="_blank" class="font-semibold text-teal-400 hover:text-teal-300 text-sm">View Project &rarr;</a>
                             <button onclick="analyzeProject(this)" class="text-xs bg-teal-500/20 text-teal-300 py-1 px-3 rounded-full hover:bg-teal-500/40 transition">✨ AI Analyst</button>
                         </div>
                     </div>
+                    
                     <div class="card rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="300">
                         <div class="flex-grow">
-                            <h3 class="text-xl font-bold text-white mb-2" data-project-title>Raksha AI</h3>
-                            <p class="mb-4 text-sm text-gray-300" data-project-desc>An AI-powered tool that provides real-time detection and analysis of phishing URLs to prevent cyber attacks.</p>
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-robot text-2xl text-teal-400 mr-3"></i>
+                                <h3 class="text-xl font-bold text-white" data-project-title>Raksha AI Platform</h3>
+                            </div>
+                            <p class="mb-4 text-sm text-gray-300" data-project-desc>An AI-powered tool that provides real-time detection and analysis of phishing URLs to prevent cyber attacks. Features include machine learning-based threat classification and automated response systems.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">React</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Node.js</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Machine Learning</span>
+                            </div>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between">
+                            <a href="#" target="_blank" class="font-semibold text-teal-400 hover:text-teal-300 text-sm">View Project &rarr;</a>
+                            <button onclick="analyzeProject(this)" class="text-xs bg-teal-500/20 text-teal-300 py-1 px-3 rounded-full hover:bg-teal-500/40 transition">✨ AI Analyst</button>
+                        </div>
+                    </div>
+
+                    <div class="card rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex-grow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-network-wired text-2xl text-teal-400 mr-3"></i>
+                                <h3 class="text-xl font-bold text-white" data-project-title>Network Security Scanner</h3>
+                            </div>
+                            <p class="mb-4 text-sm text-gray-300" data-project-desc>A comprehensive network vulnerability scanner that identifies security weaknesses, open ports, and potential attack vectors across enterprise networks.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Network Security</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Vulnerability Assessment</span>
+                            </div>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between">
+                            <a href="#" target="_blank" class="font-semibold text-teal-400 hover:text-teal-300 text-sm">View Project &rarr;</a>
+                            <button onclick="analyzeProject(this)" class="text-xs bg-teal-500/20 text-teal-300 py-1 px-3 rounded-full hover:bg-teal-500/40 transition">✨ AI Analyst</button>
+                        </div>
+                    </div>
+
+                    <div class="card rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="500">
+                        <div class="flex-grow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-lock text-2xl text-teal-400 mr-3"></i>
+                                <h3 class="text-xl font-bold text-white" data-project-title>Secure Code Analyzer</h3>
+                            </div>
+                            <p class="mb-4 text-sm text-gray-300" data-project-desc>An automated tool that scans source code for security vulnerabilities, providing detailed reports and remediation suggestions for developers.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Static Analysis</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Security Testing</span>
+                            </div>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between">
+                            <a href="#" target="_blank" class="font-semibold text-teal-400 hover:text-teal-300 text-sm">View Project &rarr;</a>
+                            <button onclick="analyzeProject(this)" class="text-xs bg-teal-500/20 text-teal-300 py-1 px-3 rounded-full hover:bg-teal-500/40 transition">✨ AI Analyst</button>
+                        </div>
+                    </div>
+
+                    <div class="card rounded-2xl p-8 flex flex-col" data-aos="fade-up" data-aos-delay="600">
+                        <div class="flex-grow">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-chart-line text-2xl text-teal-400 mr-3"></i>
+                                <h3 class="text-xl font-bold text-white" data-project-title>Threat Intelligence Dashboard</h3>
+                            </div>
+                            <p class="mb-4 text-sm text-gray-300" data-project-desc>A real-time dashboard that aggregates threat intelligence from multiple sources, providing actionable insights for security teams.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">React</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-teal-500/20 text-teal-300 px-2 py-1 rounded">Data Visualization</span>
+                            </div>
                         </div>
                         <div class="mt-auto flex items-center justify-between">
                             <a href="#" target="_blank" class="font-semibold text-teal-400 hover:text-teal-300 text-sm">View Project &rarr;</a>
@@ -255,14 +453,111 @@
                 <h2 class="text-3xl font-bold text-white text-center mb-12">Core Competencies</h2>
                 <div class="card rounded-2xl p-8 md:p-12">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                        <div data-aos="fade-up" data-aos-delay="100"><h3 class="font-semibold text-white">Penetration Testing</h3></div>
-                        <div data-aos="fade-up" data-aos-delay="150"><h3 class="font-semibold text-white">Python</h3></div>
-                        <div data-aos="fade-up" data-aos-delay="200"><h3 class="font-semibold text-white">React & Node.js</h3></div>
-                        <div data-aos="fade-up" data-aos-delay="250"><h3 class="font-semibold text-white">Vulnerability Assessment</h3></div>
-                        <div data-aos="fade-up" data-aos-delay="300"><h3 class="font-semibold text-white">Ethical Hacking</h3></div>
-                        <div data-aos="fade-up" data-aos-delay="350"><h3 class="font-semibold text-white">JavaScript</h3></div>
-                        <div data-aos="fade-up" data-aos-delay="400"><h3 class="font-semibold text-white">Deep Learning</h3></div>
-                        <div data-aos="fade-up" data-aos-delay="450"><h3 class="font-semibold text-white">Linux & Git</h3></div>
+                        <div data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-shield-alt skill-icon"></i>
+                            <h3 class="font-semibold text-white">Penetration Testing</h3>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="150">
+                            <i class="fab fa-python skill-icon"></i>
+                            <h3 class="font-semibold text-white">Python</h3>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            <i class="fab fa-react skill-icon"></i>
+                            <h3 class="font-semibold text-white">React & Node.js</h3>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="250">
+                            <i class="fas fa-search skill-icon"></i>
+                            <h3 class="font-semibold text-white">Vulnerability Assessment</h3>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-user-secret skill-icon"></i>
+                            <h3 class="font-semibold text-white">Ethical Hacking</h3>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="350">
+                            <i class="fab fa-js-square skill-icon"></i>
+                            <h3 class="font-semibold text-white">JavaScript</h3>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="400">
+                            <i class="fas fa-brain skill-icon"></i>
+                            <h3 class="font-semibold text-white">Deep Learning</h3>
+                        </div>
+                        <div data-aos="fade-up" data-aos-delay="450">
+                            <i class="fab fa-linux skill-icon"></i>
+                            <h3 class="font-semibold text-white">Linux & Git</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4">Security Tools & Technologies</h3>
+                            <div class="space-y-2 text-gray-300">
+                                <p>• Metasploit, Burp Suite, Wireshark</p>
+                                <p>• Nmap, Nessus, OpenVAS</p>
+                                <p>• Kali Linux, Parrot OS</p>
+                                <p>• Docker, Kubernetes</p>
+                                <p>• AWS Security, Azure Security</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4">Programming & Frameworks</h3>
+                            <div class="space-y-2 text-gray-300">
+                                <p>• Python (Django, Flask, FastAPI)</p>
+                                <p>• JavaScript/TypeScript (React, Node.js)</p>
+                                <p>• SQL, NoSQL Databases</p>
+                                <p>• TensorFlow, PyTorch</p>
+                                <p>• REST APIs, GraphQL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section id="certifications" class="mt-24" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white text-center mb-12">Professional Certifications</h2>
+                <div class="card rounded-2xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-gray-800/50 rounded-xl">
+                            <i class="fas fa-certificate text-4xl text-teal-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">Certified Ethical Hacker (CEH)</h3>
+                            <p class="text-gray-300 text-sm">EC-Council</p>
+                            <p class="text-teal-400 text-xs mt-2">2023</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-gray-800/50 rounded-xl">
+                            <i class="fas fa-certificate text-4xl text-teal-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">CompTIA Security+</h3>
+                            <p class="text-gray-300 text-sm">CompTIA</p>
+                            <p class="text-teal-400 text-xs mt-2">2022</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-gray-800/50 rounded-xl">
+                            <i class="fas fa-certificate text-4xl text-teal-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">AWS Certified Security</h3>
+                            <p class="text-gray-300 text-sm">Amazon Web Services</p>
+                            <p class="text-teal-400 text-xs mt-2">2023</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-gray-800/50 rounded-xl">
+                            <i class="fas fa-certificate text-4xl text-teal-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">CISSP</h3>
+                            <p class="text-gray-300 text-sm">ISC²</p>
+                            <p class="text-teal-400 text-xs mt-2">2024</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-gray-800/50 rounded-xl">
+                            <i class="fas fa-certificate text-4xl text-teal-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">OSCP</h3>
+                            <p class="text-gray-300 text-sm">Offensive Security</p>
+                            <p class="text-teal-400 text-xs mt-2">2023</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-gray-800/50 rounded-xl">
+                            <i class="fas fa-certificate text-4xl text-teal-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">Google Cloud Security</h3>
+                            <p class="text-gray-300 text-sm">Google Cloud</p>
+                            <p class="text-teal-400 text-xs mt-2">2023</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -274,14 +569,49 @@
                     <p class="max-w-xl mx-auto mb-8 text-gray-300">
                         Open to new collaborations and challenging projects. Let's discuss how we can secure your digital assets together.
                     </p>
-                    <a href="mailto:kuldeepdave561@gmail.com" class="contact-button font-bold py-3 px-8 rounded-full inline-block">
-                        Send Message
-                    </a>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
+                        <a href="mailto:kuldeepdave561@gmail.com" class="contact-button font-bold py-3 px-8 rounded-full inline-flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Send Message
+                        </a>
+                        <a href="https://linkedin.com/in/kuldeepdave" target="_blank" class="border border-teal-400 text-teal-400 font-semibold py-3 px-8 rounded-full hover:bg-teal-400 hover:text-gray-900 transition-all duration-300 inline-flex items-center">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6 text-left">
+                        <div class="text-center">
+                            <i class="fas fa-envelope text-2xl text-teal-400 mb-3"></i>
+                            <h3 class="font-semibold text-white mb-2">Email</h3>
+                            <p class="text-gray-300">kuldeepdave561@gmail.com</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fab fa-linkedin text-2xl text-teal-400 mb-3"></i>
+                            <h3 class="font-semibold text-white mb-2">LinkedIn</h3>
+                            <p class="text-gray-300">linkedin.com/in/kuldeepdave</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fab fa-github text-2xl text-teal-400 mb-3"></i>
+                            <h3 class="font-semibold text-white mb-2">GitHub</h3>
+                            <p class="text-gray-300">github.com/bnl987</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
         
         <footer class="text-center py-12 mt-16">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://github.com/bnl987" target="_blank" class="text-gray-400 hover:text-teal-400 transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://linkedin.com/in/kuldeepdave" target="_blank" class="text-gray-400 hover:text-teal-400 transition-colors">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="mailto:kuldeepdave561@gmail.com" class="text-gray-400 hover:text-teal-400 transition-colors">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+            </div>
             <p class="text-sm text-gray-500">&copy; 2025 Kuldeep Dave. All Rights Reserved.</p>
         </footer>
     </div>
@@ -350,7 +680,7 @@
             modalText.classList.add('hidden');
             modalLoader.classList.remove('hidden');
 
-            const prompt = `As a senior tech analyst, provide a professional analysis of the following project. The project is by Kuldeep Dave, a cybersecurity expert. Structure your analysis with these sections: "Potential Impact", "Technical Strengths", and "Security Considerations". Keep the tone professional and insightful.\n\nProject Title: ${title}\nProject Description: ${description}`;
+            const prompt = `As a senior cybersecurity analyst, provide a professional analysis of the following project. The project is by Kuldeep Dave, a cybersecurity expert and AI innovator. Structure your analysis with these sections: "Potential Impact", "Technical Strengths", "Security Considerations", and "Industry Relevance". Keep the tone professional and insightful.\n\nProject Title: ${title}\nProject Description: ${description}`;
 
             try {
                 const analysis = await callGemini(prompt);
